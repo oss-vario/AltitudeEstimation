@@ -7,7 +7,7 @@
 #include "altitude.h"
 
 AltitudeEstimator::AltitudeEstimator(float sigmaAccel, float sigmaGyro, float sigmaBaro,
-                                     float ca, float accelThreshold)
+                                     float ca, float accelThreshold, float initialAltitude_m)
 :kalman(ca, sigmaGyro, sigmaAccel), complementary(sigmaAccel, sigmaBaro, accelThreshold)
 {
       this->sigmaAccel = sigmaAccel;
@@ -15,6 +15,7 @@ AltitudeEstimator::AltitudeEstimator(float sigmaAccel, float sigmaGyro, float si
       this->sigmaBaro = sigmaBaro;
       this->ca = ca;
       this->accelThreshold = accelThreshold;
+      this->pastAltitude = initialAltitude_m;
 }
 
 void AltitudeEstimator::estimate(float accel[3], float gyro[3], float baroHeight, uint32_t timestamp)

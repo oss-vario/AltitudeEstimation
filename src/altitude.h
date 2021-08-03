@@ -41,7 +41,7 @@ class AltitudeEstimator {
   public:
 
     AltitudeEstimator(float sigmaAccel, float sigmaGyro, float sigmaBaro,
-                      float ca, float accelThreshold);
+                      float ca, float accelThreshold, float initialAltitude_m=0.0);
 
     void estimate(float accel[3], float gyro[3], float baroHeight, uint32_t timestamp);
 
