@@ -10,11 +10,6 @@ AltitudeEstimator::AltitudeEstimator(float sigmaAccel, float sigmaGyro, float si
                                      float ca, float accelThreshold, float initialAltitude_m)
 :kalman(ca, sigmaGyro, sigmaAccel), complementary(sigmaAccel, sigmaBaro, accelThreshold)
 {
-      this->sigmaAccel = sigmaAccel;
-      this->sigmaGyro = sigmaGyro;
-      this->sigmaBaro = sigmaBaro;
-      this->ca = ca;
-      this->accelThreshold = accelThreshold;
       this->pastAltitude = initialAltitude_m;
 }
 

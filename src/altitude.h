@@ -12,15 +12,6 @@
 class AltitudeEstimator {
 
   private:
-    // required parameters for the filters used for the estimations
-    // sensor's standard deviations
-    float sigmaAccel;
-    float sigmaGyro;
-    float sigmaBaro;
-    // Acceleration markov chain model state transition constant
-    float ca;
-    // Zero-velocity update acceleration threshold
-    float accelThreshold;
     // gravity
     float g = 9.81;
     // For computing the sampling period
